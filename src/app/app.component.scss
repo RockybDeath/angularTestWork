@@ -1,0 +1,52 @@
+.main-container{
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main-container_child{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+}
+
+.label-text{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #484848;
+}
+
+.list-item-block{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.list-item-block_img{
+  height: 54px;
+  width: 54px;
+}
+
+.list-item-block_info{
+  padding-left: 14px;
+}
+
+.label-text.lighter{
+  color: #9F9F9F;
+}
+
+.p-autocomplete-block{
+  width: 332px;
+}
+
+.text-name{
+  font-size: 14px;
+}
