@@ -19,11 +19,23 @@ export class AppComponent {
 
   company?: Company;
 
+  error: string = '';
+
   websites: Company[] = [];
 
   search(event: any){
     if(event.query) {
-      this.dataService.getData(event.query).subscribe(arrayOfObjects => this.websites = arrayOfObjects)
+      this.dataService.getData(event.query).subscribe(arrayOfObjects => {
+        this.websites = arrayOfObjects
+        this.error = '';
+      }, error => {
+        if(this.pAutocomplete){
+          this.pAutocomplete.loading = false;
+          this.pAutocomplete.inputEL.nativeElement.blur();
+        }
+        this.error = error.statusText;
+        console.log('Http Error', error)
+      })
     }
   }
 

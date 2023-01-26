@@ -2,7 +2,7 @@
   <div class="main-container_child">
     <p class="label-text">Компания</p>
     <div class="p-autocomplete-block">
-      <p-autoComplete #autoCompleteForm (click)="openList()" [(ngModel)]="company" [dropdownMode]="'current'" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%', 'font-size': '14px'}" [suggestions]="websites" (completeMethod)="search($event)" [field]="'name'">
+      <p-autoComplete #autoCompleteForm (click)="openList()" [showEmptyMessage]="true" [(ngModel)]="company" [dropdownMode]="'current'" [style]="{'width':'100%'}" [inputStyle]="{'width':'100%', 'font-size': '14px'}" [suggestions]="websites" (completeMethod)="search($event)" [field]="'name'">
         <ng-template let-website pTemplate="item">
           <div class="list-item-block">
             <img src="{{website?.logo}}" class="list-item-block_img" alt="Картинка"/>
@@ -14,5 +14,6 @@
         </ng-template>
       </p-autoComplete>
     </div>
+    <p>{{error}}</p>
   </div>
 </div>
