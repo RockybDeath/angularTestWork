@@ -31,7 +31,8 @@ export class DataService {
             )
           )
         )
-      })
+      }),
+      take(1)
     )
   }
 }
